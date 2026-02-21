@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Royal Stiyle Boutique</title>
+    
+    <meta property="og:title" content="Royal Stiyle Boutique">
+    <meta property="og:description" content="Premium Erkaklar Kiyimi - Abu Saxiy Center">
+    <meta property="og:image" content="https://i.postimg.cc/V6fLdqh2/photo-2026-02-09-05-46-36.jpg">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #080808;
+            --gold-primary: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #D4AF37, #FFDF70, #B8860B);
+            --btn-bg: #141414;
+            --text-color: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0C13.43 0 0 13.43 0 30c0 16.57 13.43 30 30 30 16.57 0 30-13.43 30-30C60 13.43 46.57 0 30 0zm0 56C15.65 56 4 44.35 4 30S15.65 4 30 4s26 11.65 26 26-11.65 26-26 26zM30 8C17.85 8 8 17.85 8 30s9.85 22 22 22 22-9.85 22-22S42.15 8 30 8zm0 40c-9.94 0-18-8.06-18-18S20.06 12 30 12s18 8.06 18 18-8.06 18-18 18z' fill='%23D4AF37' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%; max-width: 480px;
+            text-align: center; position: relative; z-index: 2;
+            padding-bottom: 60px;
+        }
+
+        /* --- PROFIL --- */
+        .profile-section {
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .profile-img-box {
+            position: relative;
+            width: 140px; height: 140px;
+            margin: 0 auto 15px auto;
+            padding: 4px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .profile-img {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--bg-color);
+        }
+
+        .brand-title {
+            font-size: 24px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 5px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .brand-bio {
+            font-size: 14px; color: var(--text-muted); font-weight: 500;
+        }
+
+        /* --- TUGMALAR --- */
+        .links-list {
+            display: flex; flex-direction: column;
+            gap: 15px; width: 100%;
+        }
+
+        .gold-btn {
+            position: relative;
+            display: flex; align-items: center;
+            padding: 16px 25px;
+            background: var(--btn-bg);
+            text-decoration: none;
+            color: var(--gold-primary);
+            font-size: 18px; font-weight: 600;
+            border-radius: 50px;
+            border: 1px solid var(--gold-primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: float-btn 4s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        /* Ikonkalar */
+        .gold-btn i {
+            font-size: 22px; margin-right: 15px;
+            color: var(--gold-primary);
+            width: 30px; text-align: center;
+            transition: transform 0.3s;
+        }
+
+        /* Telefon ikonkasini to'g'irlash */
+        .fa-phone {
+            transform: scaleX(1); /* Standart holat */
+        }
+
+        .gold-btn:hover {
+            background: var(--gold-primary);
+            color: var(--bg-color);
+            transform: translateY(-5px);
+        }
+        .gold-btn:hover i { color: var(--bg-color); transform: scale(1.1); }
+
+        /* --- XARITA KARTASI (Kichraytirilgan) --- */
+        .map-card {
+            margin-top: 30px;
+            border-radius: 20px;
+            padding: 2px;
+            background: var(--gold-gradient);
+            position: relative;
+            overflow: hidden;
+            animation: float-btn 5s ease-in-out infinite;
+        }
+        
+        .map-address-label {
+            position: absolute; top: 0; left: 0; right: 0;
+            background: rgba(0,0,0,0.9);
+            color: var(--gold-primary);
+            padding: 10px; font-size: 13px; font-weight: 600;
+            z-index: 20; border-bottom: 1px solid var(--gold-primary);
+            text-align: center;
+        }
+        
+        .map-container {
+            border-radius: 18px; overflow: hidden;
+            height: 200px; /* Kichraytirildi (oldin 280px edi) */
+            background: #fff;
+            margin-top: 38px;
+            position: relative;
+        }
+        
+        iframe { width: 100%; height: 100%; border: none; }
+        .map-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer; }
+
+        /* --- ULASHISH --- */
+        .share-float-btn {
+            position: fixed; bottom: 30px; right: 25px;
+            width: 55px; height: 55px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            border: none; color: var(--bg-color);
+            font-size: 22px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.5);
+            cursor: pointer; z-index: 99;
+            animation: pulse-gold 2s infinite;
+        }
+
+        /* --- XAVFSIZLIK LINKI (Footer) --- */
+        .security-footer {
+            margin-top: 40px;
+            font-size: 12px;
+            opacity: 0.6;
+        }
+        .security-footer a {
+            color: var(--gold-primary);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--gold-primary);
+            padding-bottom: 2px;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        /* --- ANIMATSIYALAR --- */
+        @keyframes float-btn { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        @keyframes pulse-gold { 0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); } 70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-img-box">
+                <img src="https://i.postimg.cc/V6fLdqh2/photo-2026-02-09-05-46-36.jpg" alt="Royal Stiyle Boutique" class="profile-img">
+            </div>
+            <h1 class="brand-title">Royal Stiyle Boutique</h1>
+            <p class="brand-bio">Premium Erkaklar Kiyimi</p>
+        </div>
+
+        <div class="links-list">
+            
+            <a href="tel:+998997877333" class="gold-btn">
+                <i class="fas fa-phone"></i> 
+                Telefon
+            </a>
+
+            <a href="https://t.me/ROYALSTYLEBOUTIQUE" target="_blank" class="gold-btn">
+                <i class="fab fa-telegram-plane"></i>
+                Telegram Kanal
+            </a>
+
+            <a href="https://t.me/IBB_RS" target="_blank" class="gold-btn">
+                <i class="fas fa-user-shield"></i>
+                Telegram Admin
+            </a>
+
+            <a href="https://www.instagram.com/royal.style.boutiquee?utm_source=qr&igsh=MWs5bG1zdXNrZ2Z1dQ==" target="_blank" class="gold-btn">
+                <i class="fab fa-instagram"></i>
+                Instagram
+            </a>
+
+            <a href="https://yandex.ru/maps?whatshere%5Bpoint%5D=69.16683632966496%2C41.245491772640186&whatshere%5Bzoom%5D=16.0&ll=69.1668389111673%2C41.245490563057714&z=16.0" target="_blank" class="gold-btn">
+                <i class="fas fa-map-marker-alt"></i>
+                Location
+            </a>
+
+        </div>
+
+        <div class="map-card">
+            <div class="map-address-label">
+                Abu Saxiy Center, 1-Qavat, D73 do'kon
+            </div>
+            <div class="map-container">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=69.166839%2C41.245491&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNTIyNTk0NTQzEk5Py5F6YmVraXN0b24sIFRvc2hrZW50LCBVY2h0ZXBhIHR1bWFuaSwgMjgta3ZhcnRhbCwgS2F0dGEgU2Fub25pIGtvJ2NoYXNpLCA0IiYKGU1qQkVnSnJCQg%2C%2C&z=16" allowfullscreen="true"></iframe>
+                <a href="https://yandex.ru/maps?whatshere%5Bpoint%5D=69.16683632966496%2C41.245491772640186&whatshere%5Bzoom%5D=16.0&ll=69.1668389111673%2C41.245490563057714&z=16.0" class="map-overlay" target="_blank"></a>
+            </div>
+        </div>
+
+        <div class="security-footer">
+            xafsizlik uchun <a href="#" onclick="showSecurity(event)">safeNeolink12026</a>
+        </div>
+    </div>
+
+    <button class="share-float-btn" onclick="shareLink()">
+        <i class="fas fa-share-nodes"></i>
+    </button>
+
+    <script>
+        // Ulashish Funksiyasi
+        async function shareLink() {
+            const shareData = {
+                title: 'Royal Stiyle Boutique',
+                text: 'Royal Stiyle Boutique - Premium Erkaklar Kiyimi:',
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                try { await navigator.share(shareData); } catch (err) {}
+            } else {
+                try {
+                    await navigator.clipboard.writeText(shareData.text + "\n" + shareData.url);
+                    alert("Havola nusxalandi!");
+                } catch (err) {}
+            }
+        }
+
+        // Xavfsizlik Alert Funksiyasi
+        function showSecurity(e) {
+            e.preventDefault();
+            alert("Xavfsizlik uchun");
+        }
+    </script>
+
+</body>
+</html>
